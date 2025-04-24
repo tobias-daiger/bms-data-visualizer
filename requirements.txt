@@ -1,1 +1,3 @@
-#Test
+matplotlib
+pyserial
+pandas
