@@ -1,4 +1,5 @@
 import serial
+import serial.tools.list_ports
 import time
 import datetime
 import matplotlib.pyplot as plt
@@ -22,6 +23,7 @@ class LivePlot:
         self.simulation = False
         self.data_type = 1  # 1=Spannung, 2=SOC, 3=Zelle 1
         self.terminal_running = False
+        self.selected_port = "COM4"
 
         self.data_folder = os.path.join(os.getcwd(), "data")
         if not os.path.exists(self.data_folder):
@@ -34,6 +36,28 @@ class LivePlot:
         self.ax.grid()
         self.ax.legend()
         self.ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
+
+    def choose_serial_port(self):
+        ports = serial.tools.list_ports.comports()
+        available_ports = [port.device for port in ports]
+
+        if not available_ports:
+            print("Keine COM-Ports gefunden.")
+            return None
+
+        print("Verfügbare COM-Ports:")
+        for i, p in enumerate(available_ports, 1):
+            print(f"{i}: {p}")
+
+        while True:
+            try:
+                index = int(input("Wähle einen Port durch Eingabe der Zahl: "))
+                if 1 <= index <= len(available_ports):
+                    return available_ports[index - 1]
+                else:
+                    print("Ungültige Auswahl.")
+            except:
+                print("Bitte eine gültige Zahl eingeben.")
 
     def create_csv_file(self):
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -118,17 +142,21 @@ class LivePlot:
         def on_close():
             self.terminal_running = False
             root.destroy()
-            sys.exit(0)  # Beendet das gesamte Programm sauber
+            sys.exit(0)
 
-        print("Starte Terminal-GUI-Ausgabe von COM4...")
+        self.selected_port = self.choose_serial_port()
+        if not self.selected_port:
+            return
+
+        print(f"Starte Terminal-GUI-Ausgabe von {self.selected_port}...")
         try:
-            self.port = serial.Serial('COM4', 9600, timeout=1)
+            self.port = serial.Serial(self.selected_port, 9600, timeout=1)
         except Exception as e:
-            print(f"Fehler beim Öffnen von COM4: {e}")
+            print(f"Fehler beim Öffnen von {self.selected_port}: {e}")
             return
 
         root = tk.Tk()
-        root.title("COM4 Terminal-Ausgabe")
+        root.title(f"{self.selected_port} Terminal-Ausgabe")
         root.geometry("600x400")
         root.protocol("WM_DELETE_WINDOW", on_close)
 
@@ -145,16 +173,19 @@ class LivePlot:
         choice = input("Gib 7 für Terminal-GUI-Ausgabe, 8 für Simulation oder 9 für realen COM-Port mit Plot ein: ")
         if choice == "7":
             self.terminal_gui_mode()
-            return  # sys.exit wird in der GUI selbst aufgerufen
+            return
         elif choice == "8":
             self.simulation = True
             print("Simulation gestartet.")
         elif choice == "9":
+            self.selected_port = self.choose_serial_port()
+            if not self.selected_port:
+                return
             try:
-                self.port = serial.Serial('COM4', 9600, timeout=1)
-                print("Verbindung zu COM4 hergestellt.")
+                self.port = serial.Serial(self.selected_port, 9600, timeout=1)
+                print(f"Verbindung zu {self.selected_port} hergestellt.")
             except Exception as e:
-                print(f"Fehler beim Öffnen von COM4: {e}")
+                print(f"Fehler beim Öffnen von {self.selected_port}: {e}")
                 return
         else:
             print("Ungültige Eingabe. Beende...")
