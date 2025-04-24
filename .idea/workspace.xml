@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df316ea-8373-4def-928d-4b17be3a13be" name="Changes" comment="V2 mit Terminal Extra">
+      <change afterPath="$PROJECT_DIR$/core/plotting/live_reader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/live_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/live_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/csv_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/plotting/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/live_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/plotting/live_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/live_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/plotting/csv_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +100,7 @@
       <workItem from="1745493984614" duration="163000" />
       <workItem from="1745494187675" duration="73000" />
       <workItem from="1745516185350" duration="1840000" />
-      <workItem from="1745529144741" duration="454000" />
+      <workItem from="1745529144741" duration="1283000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -202,11 +206,30 @@
       <option name="project" value="LOCAL" />
       <updated>1745518011666</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="V2 mit Terminal Extra">
+      <option name="closed" value="true" />
+      <created>1745529772557</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1745529772557</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init" />

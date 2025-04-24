@@ -23,7 +23,7 @@ class LivePlot:
         self.simulation = False
         self.data_type = 1  # 1=Spannung, 2=SOC, 3=Zelle 1
         self.terminal_running = False
-        self.selected_port = "COM4"
+        #self.selected_port = "COM4"
 
         self.data_folder = os.path.join(os.getcwd(), "data")
         if not os.path.exists(self.data_folder):
@@ -217,7 +217,3 @@ class LivePlot:
         self.create_csv_file()
         ani = FuncAnimation(self.fig, self.update_plot, interval=500, blit=False)
         plt.show()
-
-if __name__ == "__main__":
-    plotter = LivePlot()
-    plotter.run()
