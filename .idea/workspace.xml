@@ -81,6 +81,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tobia\Documents\PyCharm\BMS_Plotter\core\plotting" />
+      <recent name="C:\Users\tobia\Documents\PyCharm\BMS_Plotter\core" />
+      <recent name="C:\Users\tobia\Documents\PyCharm\BMS_Plotter\core\data_source\plotting" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
