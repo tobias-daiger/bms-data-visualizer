@@ -1,1 +1,1 @@
-BMS Plotter für Daly BMS
+BMS Plotter für das Daly BMS
