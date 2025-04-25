@@ -4,6 +4,9 @@ from core.plotting.live_plotter import LivePlot
 from core.plotting.live_reader import terminal_gui_mode
 from interfaces.com_selector import get_available_ports
 from core.data_source import serial_source
+from PIL import Image, ImageTk
+import os
+
 
 class BMSGuiSelector:
     def __init__(self):
@@ -12,14 +15,38 @@ class BMSGuiSelector:
         self.mode = None
         self.selected_port = None
         self.data_type = 1
-
+        self.root.geometry("500x400")  # Breite x Höhe in Pixeln
+        self.root.configure(bg="#f0f0f0")
         self.show_mode_selection()
 
+    def load_image(self):
+        image_path = os.path.join("assets", "Foto1.png")  # Korrigierter Pfad
+        try:
+            img = Image.open(image_path)
+            img = img.resize((200, 200))  # Optional: Bildgröße anpassen
+            self.photo = ImageTk.PhotoImage(img)  # muss self. sein, sonst wird das Bild gelöscht
+            tk.Label(self.root, image=self.photo).pack(pady=10)
+        except Exception as e:
+            print(f"Bild konnte nicht geladen werden: {e}")
+
+    def clear_window(self):
+        for widget in self.root.winfo_children():
+            widget.destroy()
+        self.add_header()
+
+    def add_header(self):
+        tk.Label(self.root, text="BMS Plotter", font=("Arial", 20, "bold")).pack(pady=10)
+
     def show_mode_selection(self):
-        tk.Label(self.root, text="Wähle Betriebsmodus", font=("Arial", 16)).pack(pady=10)
-        tk.Button(self.root, text="Terminal-Modus (7)", width=30, command=self.select_terminal).pack(pady=5)
-        tk.Button(self.root, text="Simulation (8)", width=30, command=self.select_simulation).pack(pady=5)
-        tk.Button(self.root, text="Real-Daten Plot (9)", width=30, command=self.select_real).pack(pady=5)
+        self.clear_window()
+        tk.Label(self.root, text="Wähle Betriebsmodus", font=("Arial", 14)).pack(pady=10)
+        tk.Button(self.root, text="Terminal-Modus", width=30, command=self.select_terminal).pack(pady=5)
+        tk.Button(self.root, text="Simulation", width=30, command=self.select_simulation).pack(pady=5)
+        tk.Button(self.root, text="Real-Daten Plot", width=30, command=self.select_real).pack(pady=5)
+
+        # Bild nach der Anzeige des Hauptfensters laden
+        self.load_image()
+
         self.root.mainloop()
 
     def select_terminal(self):
@@ -35,8 +62,7 @@ class BMSGuiSelector:
         self.show_port_selection()
 
     def show_port_selection(self):
-        for widget in self.root.winfo_children():
-            widget.destroy()
+        self.clear_window()
 
         ports = get_available_ports()
         if not ports:
@@ -57,13 +83,12 @@ class BMSGuiSelector:
             self.show_data_type_selection()
 
     def show_data_type_selection(self):
-        for widget in self.root.winfo_children():
-            widget.destroy()
+        self.clear_window()
 
         tk.Label(self.root, text="Welche Daten anzeigen?", font=("Arial", 14)).pack(pady=10)
-        tk.Button(self.root, text="1 = Gesamtspannung (U)", width=30, command=lambda: self.start_plot(1)).pack(pady=3)
-        tk.Button(self.root, text="2 = SOC (%)", width=30, command=lambda: self.start_plot(2)).pack(pady=3)
-        tk.Button(self.root, text="3 = Zellspannung 1 (1.Z)", width=30, command=lambda: self.start_plot(3)).pack(pady=3)
+        tk.Button(self.root, text="Gesamtspannung (U)", width=30, command=lambda: self.start_plot(1)).pack(pady=3)
+        tk.Button(self.root, text="SOC (%)", width=30, command=lambda: self.start_plot(2)).pack(pady=3)
+        tk.Button(self.root, text="Zellspannung 1 (1.Z)", width=30, command=lambda: self.start_plot(3)).pack(pady=3)
 
     def start_plot(self, selected_type):
         self.data_type = selected_type
@@ -78,7 +103,3 @@ class BMSGuiSelector:
             if not plotter.port:
                 return
         plotter.run()
-
-
-if __name__ == "__main__":
-    BMSGuiSelector()
