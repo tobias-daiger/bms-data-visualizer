@@ -7,7 +7,6 @@ from matplotlib.animation import FuncAnimation
 from config import settings
 from core.data_source import serial_source, simulated_source
 from core import utils
-from interfaces.terminal_selection import handle_user_selection
 
 class LivePlot:
     def __init__(self):
@@ -29,15 +28,12 @@ class LivePlot:
 
     def update_plot(self, frame):
         now = datetime.datetime.now()
-
         if self.simulation:
             value = simulated_source.simulate_data(self.data_type)
-            print(f"Simulierter Wert: {value} um {now.strftime('%H:%M:%S')}")
         else:
             line = serial_source.read_serial_line(self.port)
             if line is None:
                 return
-            print(f"Empfangene Zeile: {line}")
             value = utils.parse_data_line(line, self.data_type)
             if value is None:
                 return
@@ -56,9 +52,6 @@ class LivePlot:
         return self.line,
 
     def run(self):
-        if not handle_user_selection(self):
-            return
-
         y_labels = {1: "Spannung (V)", 2: "SOC (%)", 3: "Zellspannung 1 (V)"}
         legends = {1: "Gesamtspannung (U)", 2: "SOC", 3: "1.Z"}
         self.ax.set_ylabel(y_labels[self.data_type])
