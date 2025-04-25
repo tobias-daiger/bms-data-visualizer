@@ -7,8 +7,7 @@ from matplotlib.animation import FuncAnimation
 from config import settings
 from core.data_source import serial_source, simulated_source
 from core import utils
-from core.plotting.live_reader import terminal_gui_mode
-
+from interfaces.terminal_selection import handle_user_selection
 
 class LivePlot:
     def __init__(self):
@@ -27,28 +26,6 @@ class LivePlot:
         self.ax.grid()
         self.ax.legend()
         self.ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
-
-    def choose_serial_port(self):
-        import serial.tools.list_ports
-        ports = serial.tools.list_ports.comports()
-        available_ports = [port.device for port in ports]
-        if not available_ports:
-            print("Keine COM-Ports gefunden.")
-            return None
-
-        print("Verfügbare COM-Ports:")
-        for i, p in enumerate(available_ports, 1):
-            print(f"{i}: {p}")
-
-        while True:
-            try:
-                index = int(input("Wähle einen Port durch Eingabe der Zahl: "))
-                if 1 <= index <= len(available_ports):
-                    return available_ports[index - 1]
-                else:
-                    print("Ungültige Auswahl.")
-            except:
-                print("Bitte eine gültige Zahl eingeben.")
 
     def update_plot(self, frame):
         now = datetime.datetime.now()
@@ -79,37 +56,7 @@ class LivePlot:
         return self.line,
 
     def run(self):
-        choice = input("Gib 7 für Terminal-GUI-Ausgabe, 8 für Simulation oder 9 für realen COM-Port mit Plot ein: ")
-        if choice == "7":
-            selected_port = self.choose_serial_port()
-            if selected_port:
-                terminal_gui_mode(selected_port)
-            return
-        elif choice == "8":
-            self.simulation = True
-            print("Simulation gestartet.")
-        elif choice == "9":
-            self.selected_port = self.choose_serial_port()
-            if not self.selected_port:
-                return
-            self.port = serial_source.open_serial_port(self.selected_port)
-            if not self.port:
-                return
-            print(f"Verbindung zu {self.selected_port} hergestellt.")
-        else:
-            print("Ungültige Eingabe. Beende...")
-            return
-
-        print("Welche Daten sollen angezeigt werden?")
-        print("1 = Gesamtspannung (U)")
-        print("2 = SOC (%)")
-        print("3 = Zellspannung 1 (1.Z)")
-        try:
-            self.data_type = int(input("Auswahl: "))
-            if self.data_type not in [1, 2, 3]:
-                raise ValueError
-        except:
-            print("Ungültige Auswahl.")
+        if not handle_user_selection(self):
             return
 
         y_labels = {1: "Spannung (V)", 2: "SOC (%)", 3: "Zellspannung 1 (V)"}
