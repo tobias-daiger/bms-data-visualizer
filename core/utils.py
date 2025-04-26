@@ -34,9 +34,8 @@ def parse_full_data_line(line):
             if 0 <= index < 13:
                 data["cells"][index] = float(value)
 
-        return data
+        return dataa
 
     except Exception as e:
         print(f"Fehler beim Parsen der Zeile: {e}")
         return None
-#HI
