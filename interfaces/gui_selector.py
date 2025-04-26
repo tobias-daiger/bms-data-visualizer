@@ -15,7 +15,7 @@ class BMSGuiSelector:
         self.mode = None
         self.selected_port = None
         self.selected_graphs = []
-        self.root.geometry("800x600")
+        self.root.geometry("500x900")
         self.root.configure(bg="#f0f0f0")
         self.show_mode_selection()
 
@@ -100,13 +100,25 @@ class BMSGuiSelector:
         self.graph_vars = {
             "U": tk.BooleanVar(),
             "SOC": tk.BooleanVar(),
+            "current": tk.BooleanVar(),
         }
         # Zellspannungen Z1 bis Z13
         for i in range(1, 14):
             self.graph_vars[f"Z{i}"] = tk.BooleanVar()
 
+        # Neue Daten
+        self.graph_vars["max_cell_voltage"] = tk.BooleanVar()
+        self.graph_vars["min_cell_voltage"] = tk.BooleanVar()
+        self.graph_vars["max_temp"] = tk.BooleanVar()
+        self.graph_vars["min_temp"] = tk.BooleanVar()
+        self.graph_vars["avg_temp"] = tk.BooleanVar()
+
         for key, var in self.graph_vars.items():
-            label = "Gesamtspannung (U)" if key == "U" else "SOC (%)" if key == "SOC" else f"{key}. Zellspannung"
+            label = "Gesamtspannung (U)" if key == "U" else "SOC (%)" if key == "SOC" else \
+                    "Strom (A)" if key == "current" else \
+                    f"{key}. Zellspannung" if key.startswith("Z") else \
+                    f"{key.replace('_', ' ').title()}"
+
             tk.Checkbutton(self.root, text=label, variable=var).pack(pady=2)
 
         tk.Button(self.root, text="Weiter", width=30, command=self.start_plot).pack(pady=10)

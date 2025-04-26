@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0df316ea-8373-4def-928d-4b17be3a13be" name="Changes" comment="V1.0 - Funktion mit Dogscooter V2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/plotting/live_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/plotting/live_reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/data_source/simulated_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/data_source/simulated_source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/plotting/live_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/plotting/live_plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/gui_selector.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/gui_selector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/plot_selector.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/plot_selector.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +120,8 @@
       <workItem from="1745529144741" duration="2943000" />
       <workItem from="1745588956626" duration="4253000" />
       <workItem from="1745652860427" duration="13738000" />
-      <workItem from="1745667254395" duration="968000" />
+      <workItem from="1745667254395" duration="5153000" />
+      <workItem from="1745673279527" duration="2924000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -350,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745667207936</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="V1.0 - Funktion mit Dogscooter V2">
+      <option name="closed" value="true" />
+      <created>1745668305428</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1745668305428</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -7,7 +7,7 @@ class CSVPlotSelector:
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("CSV Plotter")
-        self.root.geometry("800x600")
+        self.root.geometry("500x700")
         self.data = None
         self.columns = []
 
