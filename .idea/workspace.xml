@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0df316ea-8373-4def-928d-4b17be3a13be" name="Changes" comment="V4 mit GUI :-)">
-      <change afterPath="$PROJECT_DIR$/assets/Foto1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets1/Foto1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets1/__init__.py" afterDir="false" />
+    <list default="true" id="0df316ea-8373-4def-928d-4b17be3a13be" name="Changes" comment="V5 mit Bild">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets1/Foto1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets1/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/plotting/live_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/plotting/live_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/com_selector.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/com_selector.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/gui_selector.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/gui_selector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/terminal_selection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/plot_selector.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/plot_selector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,28 +64,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.__init__.executor": "Run",
-    "Python.gui.executor": "Run",
-    "Python.live_plotter.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/tobia/Documents/PyCharm/BMS_Plotter/assets1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.live_plotter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tobia/Documents/PyCharm/BMS_Plotter/assets1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.CommitDialog&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tobia\Documents\PyCharm\BMS_Plotter\assets1" />
@@ -115,7 +117,8 @@
       <workItem from="1745494187675" duration="73000" />
       <workItem from="1745516185350" duration="1840000" />
       <workItem from="1745529144741" duration="2943000" />
-      <workItem from="1745588956626" duration="4218000" />
+      <workItem from="1745588956626" duration="4253000" />
+      <workItem from="1745652860427" duration="2710000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -277,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745591321929</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="V5 mit Bild">
+      <option name="closed" value="true" />
+      <created>1745594457202</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1745594457202</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +311,8 @@
     <MESSAGE value="V2 mit Terminal Extra" />
     <MESSAGE value="V3 mit Auswahl von COM" />
     <MESSAGE value="V4 mit GUI :-)" />
-    <option name="LAST_COMMIT_MESSAGE" value="V4 mit GUI :-)" />
+    <MESSAGE value="V5 mit Bild" />
+    <option name="LAST_COMMIT_MESSAGE" value="V5 mit Bild" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/BMS_Plotter$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1745487064842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interfaces" />

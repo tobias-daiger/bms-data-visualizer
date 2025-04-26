@@ -20,10 +20,10 @@ class BMSGuiSelector:
         self.show_mode_selection()
 
     def load_image(self):
-        image_path = os.path.join("assets", "Foto1.png")  # Korrigierter Pfad
+        image_path = os.path.join("assets", "BMS2.jpg")  # Korrigierter Pfad
         try:
             img = Image.open(image_path)
-            img = img.resize((200, 200))  # Optional: Bildgröße anpassen
+            img = img.resize((450, 200))  # Optional: Bildgröße anpassen
             self.photo = ImageTk.PhotoImage(img)  # muss self. sein, sonst wird das Bild gelöscht
             tk.Label(self.root, image=self.photo).pack(pady=10)
         except Exception as e:
@@ -42,7 +42,7 @@ class BMSGuiSelector:
         tk.Label(self.root, text="Wähle Betriebsmodus", font=("Arial", 14)).pack(pady=10)
         tk.Button(self.root, text="Terminal-Modus", width=30, command=self.select_terminal).pack(pady=5)
         tk.Button(self.root, text="Simulation", width=30, command=self.select_simulation).pack(pady=5)
-        tk.Button(self.root, text="Real-Daten Plot", width=30, command=self.select_real).pack(pady=5)
+        tk.Button(self.root, text="Live-Plotter", width=30, command=self.select_real).pack(pady=5)
 
         # Bild nach der Anzeige des Hauptfensters laden
         self.load_image()
