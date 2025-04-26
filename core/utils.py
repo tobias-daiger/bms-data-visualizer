@@ -39,3 +39,4 @@ def parse_full_data_line(line):
     except Exception as e:
         print(f"Fehler beim Parsen der Zeile: {e}")
         return None
+#HI
