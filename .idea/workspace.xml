@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0df316ea-8373-4def-928d-4b17be3a13be" name="Changes" comment="V2.2 - Funktion mit Dogscooter V4 oder V4 Sketch">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0df316ea-8373-4def-928d-4b17be3a13be" name="Changes" comment="V2.2 - Funktion mit Dogscooter V4 oder V4 Sketch" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -116,7 +114,7 @@
       <workItem from="1745652860427" duration="13738000" />
       <workItem from="1745667254395" duration="5153000" />
       <workItem from="1745673279527" duration="3308000" />
-      <workItem from="1745676621653" duration="1121000" />
+      <workItem from="1745676621653" duration="1755000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -390,7 +388,63 @@
       <option name="project" value="LOCAL" />
       <updated>1745676717499</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="V2.2 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <option name="closed" value="true" />
+      <created>1745677825910</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1745677825910</updated>
+    </task>
+    <task id="LOCAL-00036" summary="V2.2 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <option name="closed" value="true" />
+      <created>1745677881104</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1745677881104</updated>
+    </task>
+    <task id="LOCAL-00037" summary="V2.2 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <option name="closed" value="true" />
+      <created>1745678018735</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1745678018735</updated>
+    </task>
+    <task id="LOCAL-00038" summary="V2.2 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <option name="closed" value="true" />
+      <created>1745678078950</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1745678078950</updated>
+    </task>
+    <task id="LOCAL-00039" summary="V2.2 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <option name="closed" value="true" />
+      <created>1745678115082</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1745678115082</updated>
+    </task>
+    <task id="LOCAL-00040" summary="V2.2 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <option name="closed" value="true" />
+      <created>1745678191287</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1745678191287</updated>
+    </task>
+    <task id="LOCAL-00041" summary="V2.2 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <option name="closed" value="true" />
+      <created>1745678320701</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1745678320701</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
