@@ -24,7 +24,7 @@ def terminal_gui_mode(port_name):
 
     root = tk.Tk()
     root.title(f"{port_name} Terminal-Ausgabe")
-    root.geometry("600x400")
+    root.geometry("1500x500")
     root.protocol("WM_DELETE_WINDOW", on_close)
 
     text_widget = ScrolledText(root, wrap=tk.WORD)
