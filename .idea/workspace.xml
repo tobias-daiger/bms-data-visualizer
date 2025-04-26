@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0df316ea-8373-4def-928d-4b17be3a13be" name="Changes" comment="V2.1 - Funktion mit Dogscooter V4 oder V4 Sketch" />
+    <list default="true" id="0df316ea-8373-4def-928d-4b17be3a13be" name="Changes" comment="V2.1 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +116,8 @@
       <workItem from="1745588956626" duration="4253000" />
       <workItem from="1745652860427" duration="13738000" />
       <workItem from="1745667254395" duration="5153000" />
-      <workItem from="1745673279527" duration="3230000" />
+      <workItem from="1745673279527" duration="3308000" />
+      <workItem from="1745676621653" duration="84000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -371,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745676531259</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="V2.1 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <option name="closed" value="true" />
+      <created>1745676559652</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1745676559652</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
