@@ -20,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -114,7 +114,7 @@
       <workItem from="1745652860427" duration="13738000" />
       <workItem from="1745667254395" duration="5153000" />
       <workItem from="1745673279527" duration="3308000" />
-      <workItem from="1745676621653" duration="1452000" />
+      <workItem from="1745676621653" duration="1755000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -420,7 +420,31 @@
       <option name="project" value="LOCAL" />
       <updated>1745678078950</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="V2.2 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <option name="closed" value="true" />
+      <created>1745678115082</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1745678115082</updated>
+    </task>
+    <task id="LOCAL-00040" summary="V2.2 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <option name="closed" value="true" />
+      <created>1745678191287</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1745678191287</updated>
+    </task>
+    <task id="LOCAL-00041" summary="V2.2 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <option name="closed" value="true" />
+      <created>1745678320701</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1745678320701</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
