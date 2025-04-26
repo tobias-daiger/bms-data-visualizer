@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox, filedialog
+from tkinter import messagebox
 from core.plotting.live_plotter import LivePlot
 from core.plotting.live_reader import terminal_gui_mode
 from interfaces.com_selector import get_available_ports
@@ -14,7 +14,7 @@ class BMSGuiSelector:
         self.root.title("BMS Plotter")
         self.mode = None
         self.selected_port = None
-        self.data_type = 1
+        self.selected_graphs = []
         self.root.geometry("800x600")
         self.root.configure(bg="#f0f0f0")
         self.show_mode_selection()
@@ -55,7 +55,7 @@ class BMSGuiSelector:
 
     def select_simulation(self):
         self.mode = "simulation"
-        self.show_data_type_selection()
+        self.show_graph_selection()
 
     def select_real(self):
         self.mode = "real"
@@ -80,7 +80,6 @@ class BMSGuiSelector:
         for port in ports:
             tk.Button(self.root, text=port, width=30, command=lambda p=port: self.set_port_and_continue(p)).pack(pady=3)
 
-        # Add a Back button to go to mode selection
         back_button = tk.Button(self.root, text="Zurück", width=30, command=self.show_mode_selection)
         back_button.pack(pady=10)
 
@@ -90,32 +89,45 @@ class BMSGuiSelector:
             self.root.destroy()
             terminal_gui_mode(self.selected_port)
         else:
-            self.show_data_type_selection()
+            self.show_graph_selection()
 
-    def show_data_type_selection(self):
+    def show_graph_selection(self):
         self.clear_window()
         self.add_header()
 
         tk.Label(self.root, text="Welche Daten anzeigen?", font=("Arial", 14)).pack(pady=10)
-        tk.Button(self.root, text="Gesamtspannung (U)", width=30, command=lambda: self.start_plot(1)).pack(pady=3)
-        tk.Button(self.root, text="SOC (%)", width=30, command=lambda: self.start_plot(2)).pack(pady=3)
-        for i in range(13):
-            tk.Button(self.root, text=f"{i+1}. Zellspannung", width=30, command=lambda i=i: self.start_plot(i+3)).pack(pady=2)
 
-        # Add a Back button to go back to port selection
+        self.graph_vars = {
+            "U": tk.BooleanVar(),
+            "SOC": tk.BooleanVar(),
+        }
+        # Zellspannungen Z1 bis Z13
+        for i in range(1, 14):
+            self.graph_vars[f"Z{i}"] = tk.BooleanVar()
+
+        for key, var in self.graph_vars.items():
+            label = "Gesamtspannung (U)" if key == "U" else "SOC (%)" if key == "SOC" else f"{key}. Zellspannung"
+            tk.Checkbutton(self.root, text=label, variable=var).pack(pady=2)
+
+        tk.Button(self.root, text="Weiter", width=30, command=self.start_plot).pack(pady=10)
         back_button = tk.Button(self.root, text="Zurück", width=30, command=self.show_port_selection)
         back_button.pack(pady=10)
 
-    def start_plot(self, selected_type):
-        self.data_type = selected_type
-        self.root.destroy()
+    def start_plot(self):
+        self.selected_graphs = [key for key, var in self.graph_vars.items() if var.get()]
 
-        plotter = LivePlot()
-        plotter.data_type = self.data_type
+        if not self.selected_graphs:
+            messagebox.showerror("Fehler", "Es wurde keine Datenquelle ausgewählt.")
+            return
+
+        self.root.destroy()
+        plotter = LivePlot(selected_graphs=self.selected_graphs)
+
         if self.mode == "simulation":
             plotter.simulation = True
         elif self.mode == "real":
             plotter.port = serial_source.open_serial_port(self.selected_port)
             if not plotter.port:
                 return
+
         plotter.run()
