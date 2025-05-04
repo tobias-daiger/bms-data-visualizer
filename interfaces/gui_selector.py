@@ -8,6 +8,7 @@ from interfaces.plot_selector import CSVPlotSelector
 from PIL import Image, ImageTk
 import os
 
+
 class BMSGuiSelector:
     def __init__(self):
         self.root = tk.Tk()
@@ -118,8 +119,11 @@ class BMSGuiSelector:
                     "Strom (A)" if key == "current" else \
                     f"{key}. Zellspannung" if key.startswith("Z") else \
                     f"{key.replace('_', ' ').title()}"
-
             tk.Checkbutton(self.root, text=label, variable=var).pack(pady=2)
+
+        # Checkbox für Alarmfunktionen
+        self.show_alarms_var = tk.BooleanVar()
+        tk.Checkbutton(self.root, text="Alarme anzeigen (Spannung/Temperatur)", variable=self.show_alarms_var).pack(pady=10)
 
         tk.Button(self.root, text="Weiter", width=30, command=self.start_plot).pack(pady=10)
         back_button = tk.Button(self.root, text="Zurück", width=30, command=self.show_port_selection)
@@ -133,7 +137,7 @@ class BMSGuiSelector:
             return
 
         self.root.destroy()
-        plotter = LivePlot(selected_graphs=self.selected_graphs)
+        plotter = LivePlot(selected_graphs=self.selected_graphs, show_alarms=self.show_alarms_var.get())
 
         if self.mode == "simulation":
             plotter.simulation = True
