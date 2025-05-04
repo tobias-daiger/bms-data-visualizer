@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0df316ea-8373-4def-928d-4b17be3a13be" name="Changes" comment="V2.3 - Funktion mit Dogscooter V4 oder V4 Sketch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_sketches/Arduino_Sketch_SimulationBMS/V4sketch_apr26b.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/plotting/live_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/plotting/live_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/messung_2025-04-26_20-15-50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/messung_2025-04-26_20-18-58.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/messung_2025-04-26_20-20-21.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/messung_2025-04-26_20-22-06.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/messung_2025-04-26_20-23-05.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/messung_2025-04-26_20-25-40.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/gui_selector.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/gui_selector.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,15 +131,7 @@
       <workItem from="1745676621653" duration="2254000" />
       <workItem from="1745682686835" duration="607000" />
       <workItem from="1745691256350" duration="1471000" />
-      <workItem from="1746353605756" duration="2343000" />
-    </task>
-    <task id="LOCAL-00003" summary="Init">
-      <option name="closed" value="true" />
-      <created>1745484449508</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1745484449508</updated>
+      <workItem from="1746353605756" duration="3802000" />
     </task>
     <task id="LOCAL-00004" summary="Init">
       <option name="closed" value="true" />
@@ -518,7 +517,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746354466535</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="V2.3 - Funktion mit Dogscooter V4 oder V4 Sketch">
+      <option name="closed" value="true" />
+      <created>1746356083507</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1746356083507</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
