@@ -7,6 +7,7 @@ from core.data_source import serial_source
 from interfaces.plot_selector import CSVPlotSelector
 from PIL import Image, ImageTk
 import os
+from core.plotting.ip_plotter import IPLoggerPlot
 
 
 class BMSGuiSelector:
@@ -45,6 +46,7 @@ class BMSGuiSelector:
         tk.Button(self.root, text="Terminal-Modus", width=30, command=self.select_terminal).pack(pady=5)
         tk.Button(self.root, text="Simulation", width=30, command=self.select_simulation).pack(pady=5)
         tk.Button(self.root, text="Live-Plotter", width=30, command=self.select_real).pack(pady=5)
+        tk.Button(self.root, text="IP Logger", width=30, command=self.select_ip_logger).pack(pady=5)
         tk.Button(self.root, text="CSV-Plotter", width=30, command=self.select_csv_plot).pack(pady=5)
 
         self.load_image()
@@ -61,6 +63,10 @@ class BMSGuiSelector:
     def select_real(self):
         self.mode = "real"
         self.show_port_selection()
+
+    def select_ip_logger(self):
+        self.mode = "ip_logger"
+        self.show_graph_selection(skip_port=True)
 
     def select_csv_plot(self):
         self.root.destroy()
@@ -79,9 +85,11 @@ class BMSGuiSelector:
 
         tk.Label(self.root, text="Wähle COM-Port", font=("Arial", 14)).pack(pady=10)
         for port in ports:
-            tk.Button(self.root, text=port, width=30, command=lambda p=port: self.set_port_and_continue(p)).pack(pady=3)
+            tk.Button(self.root, text=port, width=30,
+                      command=lambda p=port: self.set_port_and_continue(p)).pack(pady=3)
 
-        back_button = tk.Button(self.root, text="Zurück", width=30, command=self.show_mode_selection)
+        back_button = tk.Button(self.root, text="Zurück", width=30,
+                                command=self.show_mode_selection)
         back_button.pack(pady=10)
 
     def set_port_and_continue(self, port):
@@ -90,9 +98,13 @@ class BMSGuiSelector:
             self.root.destroy()
             terminal_gui_mode(self.selected_port)
         else:
-            self.show_graph_selection()
+            self.show_graph_selection(skip_port=True)  # <-- WICHTIG: skip_port=True
 
-    def show_graph_selection(self):
+    def show_graph_selection(self, skip_port=False):
+        if not skip_port and self.mode in ["real", "terminal"]:
+            self.show_port_selection()
+            return
+
         self.clear_window()
         self.add_header()
 
@@ -103,11 +115,9 @@ class BMSGuiSelector:
             "SOC": tk.BooleanVar(),
             "current": tk.BooleanVar(),
         }
-        # Zellspannungen Z1 bis Z13
         for i in range(1, 14):
             self.graph_vars[f"Z{i}"] = tk.BooleanVar()
 
-        # Neue Daten
         self.graph_vars["max_cell_voltage"] = tk.BooleanVar()
         self.graph_vars["min_cell_voltage"] = tk.BooleanVar()
         self.graph_vars["max_temp"] = tk.BooleanVar()
@@ -115,18 +125,22 @@ class BMSGuiSelector:
         self.graph_vars["avg_temp"] = tk.BooleanVar()
 
         for key, var in self.graph_vars.items():
-            label = "Gesamtspannung (U)" if key == "U" else "SOC (%)" if key == "SOC" else \
+            label = "Gesamtspannung (U)" if key == "U" else \
+                "SOC (%)" if key == "SOC" else \
                     "Strom (A)" if key == "current" else \
-                    f"{key}. Zellspannung" if key.startswith("Z") else \
-                    f"{key.replace('_', ' ').title()}"
+                        f"{key}. Zellspannung" if key.startswith("Z") else \
+                            f"{key.replace('_', ' ').title()}"
             tk.Checkbutton(self.root, text=label, variable=var).pack(pady=2)
 
-        # Checkbox für Alarmfunktionen
         self.show_alarms_var = tk.BooleanVar()
-        tk.Checkbutton(self.root, text="Alarme anzeigen (Spannung/Temperatur)", variable=self.show_alarms_var).pack(pady=10)
+        tk.Checkbutton(self.root,
+                       text="Alarme anzeigen (Spannung/Temperatur)",
+                       variable=self.show_alarms_var).pack(pady=10)
 
-        tk.Button(self.root, text="Weiter", width=30, command=self.start_plot).pack(pady=10)
-        back_button = tk.Button(self.root, text="Zurück", width=30, command=self.show_port_selection)
+        tk.Button(self.root, text="Weiter", width=30,
+                  command=self.start_plot).pack(pady=10)
+        back_button = tk.Button(self.root, text="Zurück", width=30,
+                                command=self.show_mode_selection)
         back_button.pack(pady=10)
 
     def start_plot(self):
@@ -136,14 +150,28 @@ class BMSGuiSelector:
             messagebox.showerror("Fehler", "Es wurde keine Datenquelle ausgewählt.")
             return
 
-        self.root.destroy()
-        plotter = LivePlot(selected_graphs=self.selected_graphs, show_alarms=self.show_alarms_var.get())
+        try:
+            if self.mode == "ip_logger":
+                plotter = IPLoggerPlot(self.selected_graphs)
+            else:
+                plotter = LivePlot(
+                    selected_graphs=self.selected_graphs,
+                    show_alarms=self.show_alarms_var.get()
+                )
 
-        if self.mode == "simulation":
-            plotter.simulation = True
-        elif self.mode == "real":
-            plotter.port = serial_source.open_serial_port(self.selected_port)
-            if not plotter.port:
-                return
+                if self.mode == "real":
+                    plotter.port = serial_source.open_serial_port(self.selected_port)
+                    if not plotter.port:
+                        messagebox.showerror("Fehler", f"Konnte {self.selected_port} nicht öffnen!")
+                        return
 
-        plotter.run()
+            self.root.destroy()
+            plotter.run()
+
+        except Exception as e:
+            messagebox.showerror("Kritischer Fehler", f"Unerwarteter Fehler:\n{str(e)}")
+            self.root.destroy()
+
+
+if __name__ == "__main__":
+    BMSGuiSelector()

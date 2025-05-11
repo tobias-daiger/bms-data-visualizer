@@ -1,0 +1,85 @@
+Auflistung der Ordnerpfade für Volume Windows-SSD
+Volumeseriennummer : FA9C-A8F1
+C:.
+¦   main.py
+¦   ordnerstruktur.txt
+¦   README.md
+¦   requirements.txt
+¦   
++---.idea
+¦   ¦   BMS_Plotter.iml
+¦   ¦   misc.xml
+¦   ¦   modules.xml
+¦   ¦   vcs.xml
+¦   ¦   workspace.xml
+¦   ¦   
+¦   +---inspectionProfiles
+¦           profiles_settings.xml
++---assets
+¦       BMS1.jpg
+¦       BMS2.jpg
+¦       Foto1.png
+¦       
++---config
+¦   ¦   settings.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           settings.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---core
+¦   ¦   utils.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---data_source
+¦   ¦   ¦   serial_source.py
+¦   ¦   ¦   simulated_source.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           serial_source.cpython-312.pyc
+¦   ¦           simulated_source.cpython-312.pyc
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           
+¦   +---plotting
+¦   ¦   ¦   csv_plotter.py
+¦   ¦   ¦   live_plotter.py
+¦   ¦   ¦   live_reader.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           live_plotter.cpython-312.pyc
+¦   ¦           live_reader.cpython-312.pyc
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           
+¦   +---__pycache__
+¦           utils.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---data
++---example_sketches
+¦   +---Arduino_Sketch_SimulationBMS
+¦   ¦   +---V4sketch_apr26b
+¦   ¦           V4sketch_apr26b.ino
+¦   ¦           
+¦   +---Arduino_Sketch_Simulation_Entladen
+¦   ¦   +---sketch_may4a
+¦   ¦           sketch_may4a.ino
+¦   ¦           
+¦   +---ESP32_Sketch_BMS
+¦       +---DogscooterV4
+¦               DogscooterV4.ino
+¦               
++---interfaces
+    ¦   com_selector.py
+    ¦   gui_selector.py
+    ¦   plot_selector.py
+    ¦   __init__.py
+    ¦   
+    +---__pycache__
+            com_selector.cpython-312.pyc
+            gui_selector.cpython-312.pyc
+            plot_selector.cpython-312.pyc
+            __init__.cpython-312.pyc
+            

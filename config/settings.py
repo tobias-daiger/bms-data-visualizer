@@ -10,3 +10,10 @@ MAX_TEMPERATURE_CHARGE = 45        # °C
 MAX_TEMPERATURE_DISCHARGE = 60        # °C
 MIN_TEMPERATURE_CHARGE = 0        # °C
 MIN_TEMPERATURE_DISCHARGE = -20        # °C
+
+
+IP_UPDATE_INTERVAL = 1500       # Millisekunden
+
+# IP-Logger Einstellungen
+ESP_IP = "192.168.4.1"  # Die IP deines ESP32
+IP_REQUEST_TIMEOUT = 3.0  # Timeout in Sekunden
