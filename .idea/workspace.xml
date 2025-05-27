@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0df316ea-8373-4def-928d-4b17be3a13be" name="Changes" comment="V3.0 Mit Alarm">
+    <list default="true" id="0df316ea-8373-4def-928d-4b17be3a13be" name="Changes" comment="V4.0 Ip Logger">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/plotting/ip_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/plotting/ip_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/plot_selector.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/plot_selector.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +97,6 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PY-251.23774.444" />
         <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
       </set>
     </attachedChunks>
@@ -125,14 +126,8 @@
       <workItem from="1746353605756" duration="4198000" />
       <workItem from="1746357853269" duration="4498000" />
       <workItem from="1746891619816" duration="45000" />
-    </task>
-    <task id="LOCAL-00007" summary="V1 aber schlampig">
-      <option name="closed" value="true" />
-      <created>1745490366637</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1745490366637</updated>
+      <workItem from="1746985669786" duration="6961000" />
+      <workItem from="1748354678507" duration="15000" />
     </task>
     <task id="LOCAL-00008" summary="V1 aber schlampig">
       <option name="closed" value="true" />
@@ -518,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746362065577</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="V4.0 Ip Logger">
+      <option name="closed" value="true" />
+      <created>1747001375308</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1747001375308</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +554,8 @@
     <MESSAGE value="V2.3 - Funktion mit Dogscooter V4 oder V4 Sketch" />
     <MESSAGE value="V2.4 - Neue Settings" />
     <MESSAGE value="V3.0 Mit Alarm" />
-    <option name="LAST_COMMIT_MESSAGE" value="V3.0 Mit Alarm" />
+    <MESSAGE value="V4.0 Ip Logger" />
+    <option name="LAST_COMMIT_MESSAGE" value="V4.0 Ip Logger" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/BMS_Plotter$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1745487064842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interfaces" />
