@@ -1,37 +1,68 @@
-BMS Plotter für das Daly BMS vom Dogscooter 
+# BMS Plotter
 
-Setup in PyCharm:
-pip install -r requirements.txt
+A Python-based plotting tool for battery management system (BMS) data.
 
-Start -> Type python main.py  in Terminal
+The project separates data sources, plotting components, and interfaces into dedicated modules to keep data acquisition and visualization organized.
 
-## Technische Daten der Samsung INR21700-50E
+## Project Structure
 
-| **Spezifikation**                          | **Wert**          |
-|--------------------------------------------|-------------------|
-| Kapazität (nominal)                        | 5000 mAh          |
-| Kapazität (min.)                           | 4753 mAh          |
-| Nennspannung                               | 3,6 V             |
-| Ladeschlussspannung                        | 4,2 V             |
-| Entladeschlussspannung                     | 2,5 V             |
-| Ladestrom (Standard)                       | 2,45 A            |
-| Max. Ladestrom                             | 4,9 A             |
-| Max. Entladestrom (dauerhaft)              | 9,8 A             |
-| Max. Entladestrom (pulsierend)             | 14,7 A            |
-| Abmessungen (Ø x H)                        | 21,25 mm × 70,8 mm|
-| Gewicht                                    | 69 g ± 1 g        |
-| Betriebstemperatur (Laden)                 | 0°C bis 45°C      |
-| Betriebstemperatur (Entladen)              | -20°C bis 60°C    |
-| Ladeverfahren                              | CC-CV (Konstantstrom-Konstantspannung) |
+```text
+BMS_Plotter/
+├── main.py              # Application entry point
+├── requirements.txt     # Python dependencies
+├── config/              # Configuration files
+├── core/
+│   ├── data_source/     # Data source components
+│   ├── plotting/        # Plotting components
+│   └── utils.py         # Shared utilities
+├── interfaces/          # Interface components
+├── assets/              # Project assets
+└── example_sketches/     # Example sketches
+```
 
-## Zusammenfassung der Werte für die 13s3p Konfiguration
+## Installation
 
-| **Spezifikation**                          | **Wert**          |
-|--------------------------------------------|-------------------|
-| Gesamtspannung (nominell)                  | 46,8 V            |
-| Maximale Ladespannung                      | 54,6 V            |
-| Minimale Entladespannung                   | 32,5 V            |
-| Gesamtkapazität                            | 15 Ah             |
-| Max. Entladestrom                          | 29,4 A            |
-| Max. Ladestrom                             | 14,7 A            |
-| Max. Pulsstrom                             | 44,1 A            |
+Clone the repository and navigate to the project directory:
+
+```bash
+git clone [https://github.com/tobias-daiger/BMS_Plotter.git](https://github.com/tobias-daiger/BMS_Plotter.git)
+cd BMS_Plotter
+```
+
+Create and activate a virtual environment:
+
+### Windows
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+### Linux / macOS
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Install the dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+## Running the Application
+
+From the project directory, run:
+
+```bash
+python main.py
+```
+
+## Configuration and Examples
+
+Configuration files are located in `config/`. The `example_sketches/`
+directory contains example sketches.
+
+Data source components and plotting logic are organized separately in
+`core/data_source/` and `core/plotting/`.
